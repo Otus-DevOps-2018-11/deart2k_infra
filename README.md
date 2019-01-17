@@ -23,7 +23,7 @@ export someinternalhost='-t -A appuser@35.210.152.27 ssh 10.132.0.3'
 ssh $someinternalhost
 ```
 
-Вариант 2 (более правельный)
+Вариант 2 (более правильный)
 
 Добавляем в ~/.ssh/config  
 
