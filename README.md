@@ -54,7 +54,7 @@ someinternalhost_IP = 10.132.0.3
 ```
 ## ДЗ №4  
 
-testapp_IP = 35.198.167.169
+testapp_IP = 35.240.87.11
 testapp_port = 9292
 
 
