@@ -90,3 +90,41 @@ gcloud compute firewall-rules create default-puma-server \
 --target-tags=puma-server
 
 ```
+
+
+## ДЗ №6 
+
+Практика IaC с использованием Terraform
+
+Задания со *
+
+#### Опишите в коде терраформа добавление ssh ключа пользователя appuser1 в метаданные проекта. Выполните terraform apply и проверьте результат (публичный ключ можно брать пользователя appuser)  
+
+```bash
+resource "google_compute_project_metadata_item" "default" {
+  key   = "ssh-keys"
+  value = "appuser1:${file(var.public_key_path)}"
+}
+
+```
+
+В результате публичный ключ пользователя appuser1 появился в метаданных проекта и его можно исмользовать для всех vm проекта
+
+
+
+#### Опишите в коде терраформа добавление ssh ключей нескольких пользователей в метаданные проекта, например appuser1, appuser2 и т.д.). Выполните terraform apply и проверьте №№№№№результат
+
+```bash
+
+resource "google_compute_project_metadata_item" "default" {
+  key   = "ssh-keys"
+  value = "appuser1:${file(var.public_key_path)} appuser2:${file(var.public_key_path)} appuser3:${file(var.public_key_path)}"
+}
+
+```
+
+В результате все перечисленные публичные ключи пользователей появился в метаданных проекта и их можно исмользовать для всех vm проекта
+
+##### Добавьте в веб интерфейсе ssh ключ пользователю appuser_web в метаданные проекта. Выполните terraform apply и проверьте результат
+
+В результате выполнения команды terraform apply ключ добавленный через web-интерфейс был удалён.
