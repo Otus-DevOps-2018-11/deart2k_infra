@@ -38,4 +38,3 @@ if args.host:
     print(json.dumps(output[args.host]))
 else:
     print(json.dumps(output))
-    
